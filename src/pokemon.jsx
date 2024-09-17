@@ -1,16 +1,3 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-
-
-
-/////// Pokemon.jsx///
 import { useEffect, useState } from "react";
 import "./index.css";
 import { PokemonCards } from "./PokemonCards";
@@ -22,7 +9,7 @@ export const Pokemon = () => {
   const [search, setSearch] = useState("");
 
   const API = "https://pokeapi.co/api/v2/pokemon?limit=124";
-  
+
   const fetchPokemon = async () => {
     try {
       const res = await fetch(API);
@@ -40,7 +27,8 @@ export const Pokemon = () => {
       console.log(detailedResponses);
       setPokemon(detailedResponses);
       setLoading(false);
-    } catch (error) {
+    } 
+    catch (error) {
       console.log(error);
       setLoading(false);
       setError(error);
